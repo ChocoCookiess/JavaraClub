@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javara Prototype</title>
+    <link rel="stylesheet" href="Javara.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #006064;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #004d40;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #b2dfdb;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus {
+            border-color: #00796b;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
+        }
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background-color: #00796b;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .link a {
+            text-decoration: none;
+            color: #00796b;
+            font-weight: bold;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .animation {
+            animation: slideDown 0.6s ease-out;
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        #signInForm {
+            display: none; /* Hide the sign-in form initially */
+        }
+    </style>
+</head>
+<body>
+    <div class="container animation">
+        <h1>Sign Up</h1>
+        <form id="signUpForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="link">
+            Already have an account? <a href="#" id="signInLink">Sign In</a>
+        </div>
+
+        <!-- Sign In Form -->
+        <form id="signInForm">
+            <h1>Sign In</h1>
+            <label for="signInEmail">Email</label>
+            <input type="email" id="signInEmail" placeholder="Enter your email">
+
+            <label for="signInPassword">Password</label>
+            <input type="password" id="signInPassword" placeholder="Enter your password">
+
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted successfully!');
+        });
+
+        // Handle the Sign In link click
+        document.getElementById('signInLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Toggle visibility: hide the sign-up form, show the sign-in form
+            document.getElementById('signUpForm').style.display = 'none';
+            document.getElementById('signInForm').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

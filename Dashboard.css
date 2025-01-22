@@ -1,0 +1,36 @@
+* Card styles */
+.card {
+    background-color: #ffffff;
+    border:#000000
+    border-radius: 10px;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    image-resolution:calc(0);
+}
+
+.coach-img small{
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    object-fit:cover;
+    display: block;
+}
+
+
+/* Button styles */
+button {
+    border-radius: 20px;
+}
+
+.text-danger {
+    font-size: 0.8rem;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+}
